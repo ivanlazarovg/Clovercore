@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloverLauncher : MonoBehaviour
 {
     [SerializeField] private GameObject cloverProjectilePrefab;
+    [SerializeField] private Transform cloverLauncherTransform;
     [SerializeField] private float launchStrength;
 
     // Update is called once per frame
@@ -14,6 +15,10 @@ public class CloverLauncher : MonoBehaviour
         {
             LaunchProjectile();
         }
+
+        transform.rotation = cloverLauncherTransform.rotation;
+        transform.position = Vector3.Slerp(transform.position, cloverLauncherTransform.position, 40 * Time.deltaTime);
+
     }
 
     void LaunchProjectile()

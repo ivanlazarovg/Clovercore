@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1006441687031734333}
   - component: {fileID: 4655225538383773959}
   - component: {fileID: -4313999240172368412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CloverProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.46
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4655225538383773959
 Rigidbody:

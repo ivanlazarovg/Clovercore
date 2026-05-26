@@ -5,13 +5,14 @@ using UnityEngine;
 public class CloverSpawn : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask cloverLayer;
     [SerializeField] private float growSpeed;
 
-    private Renderer[] cloverChildren;
+    private List<Renderer> cloverChildren;
     
     public void OnEnable()
     {
-        cloverChildren = GetComponentsInChildren<Renderer>();
+        cloverChildren = new List<Renderer>(GetComponentsInChildren<Renderer>());
         //init shader stuff
         foreach(var clover in cloverChildren)
         {
@@ -32,12 +33,13 @@ public class CloverSpawn : MonoBehaviour
                 clover.transform.position = hit.point;
                 clover.transform.rotation = Quaternion.LookRotation(hit.normal);
             }
+
         }
     }
 
     IEnumerator GrowClovers()
     {
-        float t = 0.9f;
+        float t = 1.55f;
 
         while(t < 5)
         {

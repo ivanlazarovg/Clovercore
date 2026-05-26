@@ -11,11 +11,12 @@ public class CloverProjectile : MonoBehaviour
         {
             InstantiateClover();
         }
+
         Destroy(gameObject);
     }
 
     void InstantiateClover()
     {
-        Instantiate(cloverPrefab, transform.position + Vector3.up, Quaternion.identity);
+        Instantiate(cloverPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
     }
 }
