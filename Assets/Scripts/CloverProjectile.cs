@@ -5,18 +5,19 @@ using UnityEngine;
 public class CloverProjectile : MonoBehaviour
 {
     [SerializeField] private GameObject cloverPrefab;
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.gameObject.layer == 3)
         {
-            InstantiateClover();
+            InstantiateClover(collision.GetContact(0));
         }
 
         Destroy(gameObject);
     }
 
-    void InstantiateClover()
+    void InstantiateClover(ContactPoint contact)
     {
-        Instantiate(cloverPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        Instantiate(cloverPrefab, transform.position + Vector3.up * 0.5f, Quaternion.FromToRotation(Vector3.up, contact.normal));
     }
 }
