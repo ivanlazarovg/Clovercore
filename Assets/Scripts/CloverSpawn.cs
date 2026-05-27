@@ -28,10 +28,18 @@ public class CloverSpawn : MonoBehaviour
         foreach(var clover in cloverChildren)
         {
             RaycastHit hit;
-            if (Physics.Raycast(clover.transform.position, -transform.up, out hit, groundLayer))
+            if (Physics.Raycast(clover.transform.position, -transform.up, out hit, 10, groundLayer, QueryTriggerInteraction.Collide))
             {
-                clover.transform.position = hit.point;
-                clover.transform.rotation = Quaternion.LookRotation(hit.normal);
+                if(hit.collider.gameObject.layer == 6 && hit.collider.gameObject != this.gameObject)
+                {
+                    clover.gameObject.SetActive(false);
+                }
+                else
+                {
+                    clover.transform.position = hit.point;
+                    clover.transform.rotation = Quaternion.LookRotation(hit.normal);
+                }
+                
             }
 
         }
