@@ -8,10 +8,11 @@ public class CloverProjectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.gameObject.layer == 3)
+        if(collision.collider.gameObject.layer == 3 || collision.collider.gameObject.GetComponent<TextReveal>())
         {
             InstantiateClover(collision.GetContact(0));
         }
+
 
         Destroy(gameObject);
     }

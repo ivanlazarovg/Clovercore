@@ -41,6 +41,10 @@ public class CloverSpawn : MonoBehaviour
                 }
                 
             }
+            else
+            {
+                clover.gameObject.SetActive(false);
+            }
 
         }
     }
