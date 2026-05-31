@@ -107,11 +107,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 584
   cloverLayer:
     serializedVersion: 2
     m_Bits: 64
-  growSpeed: 1
+  growSpeed: 0.84
 --- !u!1001 &21487095728004893
 PrefabInstance:
   m_ObjectHideFlags: 0

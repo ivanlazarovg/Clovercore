@@ -25,10 +25,16 @@ public class CloverSpawn : MonoBehaviour
     }
     void CalculatePositions()
     {
-        foreach(var clover in cloverChildren)
+        foreach (var clover in cloverChildren)
         {
             RaycastHit hit;
-            if (Physics.Raycast(clover.transform.position, -transform.up, out hit, 4, groundLayer, QueryTriggerInteraction.Collide))
+            bool raycast = Physics.Raycast(clover.transform.position, -transform.up, out hit, 4, groundLayer, QueryTriggerInteraction.Collide) 
+                || Physics.Raycast(clover.transform.position, -transform.right, out hit, 4, groundLayer, QueryTriggerInteraction.Collide) 
+                || Physics.Raycast(clover.transform.position, transform.right, out hit, 4, groundLayer, QueryTriggerInteraction.Collide)
+                || Physics.Raycast(clover.transform.position, -transform.forward, out hit, 4, groundLayer, QueryTriggerInteraction.Collide)
+                || Physics.Raycast(clover.transform.position, transform.forward, out hit, 4, groundLayer, QueryTriggerInteraction.Collide);
+
+            if (raycast)
             {
                 if(hit.collider.gameObject.layer == 6 && hit.collider.gameObject != this.gameObject)
                 {
@@ -53,9 +59,9 @@ public class CloverSpawn : MonoBehaviour
     {
         float t = 1.55f;
 
-        while(t < 5)
+        while(t < 6)
         {
-            t += Time.deltaTime * (growSpeed + ((5-t) * 0.5f));
+            t += Time.deltaTime * (growSpeed + ((6-t) * 0.5f));
             foreach (var clover in cloverChildren)
             {
                 clover.material.SetFloat("_Height", t);
