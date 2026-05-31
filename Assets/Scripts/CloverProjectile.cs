@@ -10,15 +10,22 @@ public class CloverProjectile : MonoBehaviour
     {
         if(collision.collider.gameObject.layer == 3 || collision.collider.gameObject.GetComponent<TextReveal>())
         {
-            InstantiateClover(collision.GetContact(0));
+            StartCoroutine(InstantiateClover(collision.GetContact(0)));
         }
-
-
-        Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
-    void InstantiateClover(ContactPoint contact)
+    IEnumerator InstantiateClover(ContactPoint contact)
     {
+        yield return new WaitForSeconds(0.02f);
+
         Instantiate(cloverPrefab, transform.position + Vector3.up * 0.5f, Quaternion.FromToRotation(Vector3.up, contact.normal));
+        Destroy(gameObject);
+
+        StopAllCoroutines();
     }
 }
