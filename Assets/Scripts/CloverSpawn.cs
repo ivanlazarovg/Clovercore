@@ -28,7 +28,7 @@ public class CloverSpawn : MonoBehaviour
         foreach(var clover in cloverChildren)
         {
             RaycastHit hit;
-            if (Physics.Raycast(clover.transform.position, -transform.up, out hit, 10, groundLayer, QueryTriggerInteraction.Collide))
+            if (Physics.Raycast(clover.transform.position, -transform.up, out hit, 4, groundLayer, QueryTriggerInteraction.Collide))
             {
                 if(hit.collider.gameObject.layer == 6 && hit.collider.gameObject != this.gameObject)
                 {

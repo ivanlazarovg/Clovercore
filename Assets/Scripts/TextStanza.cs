@@ -15,6 +15,6 @@ public class TextStanza : MonoBehaviour
         poemTextMesh.ForceMeshUpdate();
         textIndex++;
 
-        collider.size = new Vector3(poemTextMesh.textBounds.size.x * 1.2f, poemTextMesh.textBounds.size.y * 1.4f, poemTextMesh.textBounds.size.z);
+        collider.size = new Vector3(poemTextMesh.textBounds.size.x * 1.2f, poemTextMesh.textBounds.size.y * 1.5f, poemTextMesh.textBounds.size.z);
     }
 }

@@ -9,6 +9,7 @@ public class TextReveal : MonoBehaviour
 
     private Renderer textRenderer;
     private BoxCollider textCollider;
+    private TextMeshPro textMesh;
     private bool hasAppeared = false;
 
     private void OnCollisionEnter(Collision collision)
@@ -25,17 +26,17 @@ public class TextReveal : MonoBehaviour
         textRenderer.enabled = false;
 
         textCollider = GetComponent<BoxCollider>();
+        textMesh = GetComponent<TextMeshPro>();
     }
 
     void AppearText()
     {
-        stanza.SetText(GetComponent<TextMeshPro>(), textCollider);
+        stanza.SetText(textMesh, textCollider);
 
         textRenderer.enabled = true;
         hasAppeared = true;
 
         StartCoroutine(TextAttributes.Instance.FadeIn(textRenderer));
     }
-
 
 }
