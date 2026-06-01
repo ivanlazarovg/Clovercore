@@ -10,6 +10,7 @@ public class TextReveal : MonoBehaviour
     private Renderer textRenderer;
     private BoxCollider textCollider;
     private TextMeshPro textMesh;
+    private AudioSource textRevealSource;
     private bool hasAppeared = false;
 
     private void OnCollisionEnter(Collision collision)
@@ -25,6 +26,8 @@ public class TextReveal : MonoBehaviour
         textRenderer = GetComponent<Renderer>();
         textRenderer.enabled = false;
 
+        textRevealSource = GetComponent<AudioSource>();
+
         textCollider = GetComponent<BoxCollider>();
         textMesh = GetComponent<TextMeshPro>();
     }
@@ -32,6 +35,8 @@ public class TextReveal : MonoBehaviour
     void AppearText()
     {
         stanza.SetText(textMesh, textCollider);
+
+        textRevealSource.Play();
 
         textRenderer.enabled = true;
         hasAppeared = true;
