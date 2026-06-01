@@ -49,24 +49,10 @@ public class Movement : MonoBehaviour
 
     [SerializeField]
     public float speedAmount;
-    
+
+    public float dampingCoefficient;
+
     public float slowDownSpeed = 11;
-
-    [SerializeField]
-    float flySpeedOrigin;
-
-    [SerializeField]
-    float dampingCoefficient;
-
-    [SerializeField]
-    float liftOffSpeed;
-
-    float hoverInTime;
-
-    public float hoverIntensityX;
-    public float hoverIntensityY;
-    public float hoverFrequency;
-    public float hoverSpeed;
 
     public bool isFlying;
 
@@ -96,7 +82,6 @@ public class Movement : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-
     [SerializeField] private Material cloudMat;
     [SerializeField] private float cloudCoverageTarget;
     float footsteptime = 0;
@@ -104,26 +89,30 @@ public class Movement : MonoBehaviour
 
     public Vector3 move;
 
+    private Footsteps footstepObject;
+
     private static Movement instance;
 
     public static Movement Instance
     {
-        get 
-        { 
+        get
+        {
             instance = FindAnyObjectByType<Movement>();
             return instance;
         }
     }
 
+
     #region Main Movement
     void Start()
     {
         camOrigin = cam.localPosition;
+        footstepObject = FindAnyObjectByType<Footsteps>();
     }
 
     void Update()
     {
-        if (canMove) 
+        if (canMove)
         {
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
@@ -185,12 +174,28 @@ public class Movement : MonoBehaviour
         bobTargetPosition = camOrigin + new Vector3(Mathf.Cos(zPoint)
         * x_intensity, Mathf.Sin(zPoint * 2) * y_intensity, 0f);
 
+        if (footsteptime > 1)
+        {
+            footstepObject.PlayFootstep();
+            footsteptime = 0;
+        }
+        else
+        {
+            footsteptime += Time.deltaTime * bobFrequency * 0.3f;
+        }
+
     }
+
+    void PlayFootstep()
+    {
+
+    }
+
     void Breathe(float zPoint, float x_intensity, float y_intensity, float z_intensity)
     {
         breathTargetPosition = camOrigin + new Vector3(Mathf.Cos(zPoint)
         * x_intensity, Mathf.Sin(zPoint) * y_intensity, Mathf.Sin(zPoint) * z_intensity);
-        
+
     }
 
     void Move()
@@ -228,15 +233,7 @@ public class Movement : MonoBehaviour
 
     void Fly()
     {
-        velocity += GetMovementVector() * flySpeed * Time.deltaTime;  
-    }
-
-    private void StaticFloating()
-    {
-        Vector3 hoverTargetPosition = camOrigin + new Vector3(Mathf.Cos(hoverInTime)
-        * hoverIntensityX, Mathf.Sin(hoverInTime) * hoverIntensityY, 0f);
-        hoverInTime += Time.deltaTime * hoverFrequency;
-        cam.transform.localPosition = Vector3.Lerp(cam.transform.localPosition, hoverTargetPosition, Time.deltaTime * hoverSpeed);
+        velocity += GetMovementVector() * flySpeed * Time.deltaTime;
     }
 
     Vector3 GetMovementVector()
