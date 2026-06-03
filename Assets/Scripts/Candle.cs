@@ -12,4 +12,10 @@ public class Candle : MonoBehaviour
         light.SetActive(true);
         flame.SetActive(true);
     }
+
+    public void SnuffOutFlame()
+    {
+        light.SetActive(false);
+        flame.SetActive(false);
+    }
 }

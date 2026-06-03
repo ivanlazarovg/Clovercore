@@ -7,7 +7,7 @@ public class TextStanza : MonoBehaviour
 {
     [SerializeField, TextArea()] private string[] poemTexts;
 
-    private int textIndex = 0;
+    public int textIndex = 0;
 
     public void SetText(TextMeshPro poemTextMesh, BoxCollider collider)
     {

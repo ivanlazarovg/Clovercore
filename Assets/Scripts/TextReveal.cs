@@ -6,12 +6,12 @@ using TMPro;
 public class TextReveal : MonoBehaviour
 {
     public TextStanza stanza;
+    public bool hasAppeared = false;
 
     private Renderer textRenderer;
     private BoxCollider textCollider;
     private TextMeshPro textMesh;
     private AudioSource textRevealSource;
-    private bool hasAppeared = false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -36,7 +36,7 @@ public class TextReveal : MonoBehaviour
     {
         stanza.SetText(textMesh, textCollider);
 
-        textRevealSource.Play();
+        //textRevealSource.Play();
 
         textRenderer.enabled = true;
         hasAppeared = true;
