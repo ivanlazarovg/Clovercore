@@ -74,7 +74,7 @@ Material:
     - _GlossyReflections: 1
     - _GrowWarp: -0.02
     - _GrowWarpPower: 1.95
-    - _Height: 29.708769
+    - _Height: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
