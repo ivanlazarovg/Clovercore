@@ -5,11 +5,11 @@ using TMPro;
 
 public class TextStanza : MonoBehaviour
 {
-    [SerializeField, TextArea()] private string[] poemTexts;
+    [SerializeField, TextArea()] protected string[] poemTexts;
 
     public int textIndex = 0;
 
-    public void SetText(TextMeshPro poemTextMesh, BoxCollider collider)
+    public virtual void SetText(TextMeshPro poemTextMesh, BoxCollider collider)
     {
         poemTextMesh.text = poemTexts[textIndex];
         poemTextMesh.ForceMeshUpdate();

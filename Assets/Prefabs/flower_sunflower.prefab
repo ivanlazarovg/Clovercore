@@ -29,7 +29,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9054971799013976416}
-  - {fileID: 3312985731886548007}
   - {fileID: 8984132672761408777}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,14 +58,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5347223173314953221}
-  m_LocalRotation: {x: 0.44354162, y: 0.18131971, z: 0.043371547, w: 0.87664866}
-  m_LocalPosition: {x: -0.28184465, y: 8.252596, z: -0.049716923}
-  m_LocalScale: {x: 49.422054, y: 49.42205, z: 15.661547}
+  m_LocalRotation: {x: 0.081089854, y: -0.07521814, z: 0.1384343, w: 0.9841761}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0633872, y: 1.227142, z: 0.5642688}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4126530152240554640}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 9054971799013976416}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 10.395, y: -7.337, z: 15.345}
 --- !u!33 &2109529409214829018
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -128,6 +127,7 @@ GameObject:
   - component: {fileID: 9054971799013976416}
   - component: {fileID: 6982944476084021385}
   - component: {fileID: 6476955899286212187}
+  - component: {fileID: 236118413276303132}
   m_Layer: 0
   m_Name: Flower
   m_TagString: Untagged
@@ -146,7 +146,8 @@ Transform:
   m_LocalPosition: {x: -0.28184465, y: 8.252596, z: -0.049716923}
   m_LocalScale: {x: 49.422054, y: 49.42205, z: 15.661547}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3312985731886548007}
   m_Father: {fileID: 4126530152240554640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 21.506, y: 3.375, z: 9.715}
@@ -200,6 +201,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &236118413276303132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5381748206292774276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76e82fb90a8f014e83b8afc179e8f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6342048037898507007
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4126530152240554640}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4733738275833055966
 MeshFilter:

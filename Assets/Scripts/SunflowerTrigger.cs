@@ -13,7 +13,7 @@ public class SunflowerTrigger : MonoBehaviour
     private bool textRevealed;
     void OnEnable()
     {
-        StartCoroutine(RevealSunflowers(0, startHeight));
+        StartCoroutine(RevealSunflowers(0, startHeight, revealSpeed * 6));
     }
 
     // Update is called once per frame
@@ -21,12 +21,12 @@ public class SunflowerTrigger : MonoBehaviour
     {
         if (finalReveal.hasAppeared && !textRevealed)
         {
-            StartCoroutine(RevealSunflowers(startHeight, finalHeight));
+            StartCoroutine(RevealSunflowers(startHeight, finalHeight, revealSpeed));
             textRevealed = true;
         }
     }
 
-    IEnumerator RevealSunflowers(float startHeight, float finalHeight)
+    IEnumerator RevealSunflowers(float startHeight, float finalHeight, float _revealSpeed)
     {
         foreach (var mat in materials)
         {
@@ -37,7 +37,7 @@ public class SunflowerTrigger : MonoBehaviour
 
         while(t < 1)
         {
-            t += Time.deltaTime * revealSpeed;
+            t += Time.deltaTime * _revealSpeed;
             foreach(var mat in materials)
             {
                 mat.SetFloat("_Height", Mathf.SmoothStep(startHeight, finalHeight, t));
