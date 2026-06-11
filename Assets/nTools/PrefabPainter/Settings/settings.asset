@@ -677,10 +677,10 @@ MonoBehaviour:
       colorTag: 0
     - name: flower_sunflower
       settings:
-        brushRadius: 5.9
+        brushRadius: 2.9
         brushSpacing: 0.25
-        brushOverlapCheckMode: 0
-        brushOverlapDistance: 0.5
+        brushOverlapCheckMode: 1
+        brushOverlapDistance: 1
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -695,8 +695,8 @@ MonoBehaviour:
         randomizeOrientationZ: 0
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 0.85
-        scaleUniformMax: 1.18
+        scaleUniformMin: 2
+        scaleUniformMax: 2.39
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         pinFixedRotation: 0
@@ -805,14 +805,14 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Pine Tree
       settings:
-        brushRadius: 10.82
+        brushRadius: 9.66
         brushSpacing: 0.49
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 4
+        brushOverlapDistance: 6
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -827,8 +827,8 @@ MonoBehaviour:
         randomizeOrientationZ: 0
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 1
-        scaleUniformMax: 1.7
+        scaleUniformMin: 1.31
+        scaleUniformMax: 1.92
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         pinFixedRotation: 0
@@ -937,7 +937,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     levelsGamma: 1
     levelsInBlack: 0
@@ -2295,7 +2295,7 @@ MonoBehaviour:
   pinSnapScale: 0
   placeAngleStep: 15
   placeScaleStep: 0.1
-  eraseBrushRadius: 10
+  eraseBrushRadius: 1.69
   eraseByLayer: 0
   eraseLayers:
     serializedVersion: 2

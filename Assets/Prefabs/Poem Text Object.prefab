@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stanza: {fileID: 0}
+  hasAppeared: 0
 --- !u!65 &3673648845028688244
 BoxCollider:
   m_ObjectHideFlags: 0

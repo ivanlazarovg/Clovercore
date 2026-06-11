@@ -6,6 +6,7 @@ using TMPro;
 public class TextReveal : MonoBehaviour
 {
     public TextStanza stanza;
+    public Color textColor = Color.black;
     public bool hasAppeared = false;
 
     private Renderer textRenderer;
@@ -30,6 +31,8 @@ public class TextReveal : MonoBehaviour
 
         textCollider = GetComponent<BoxCollider>();
         textMesh = GetComponent<TextMeshPro>();
+
+        textMesh.color = textColor;
     }
 
     void AppearText()
