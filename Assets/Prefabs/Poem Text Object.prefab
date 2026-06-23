@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stanza: {fileID: 0}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
   hasAppeared: 0
 --- !u!65 &3673648845028688244
 BoxCollider:

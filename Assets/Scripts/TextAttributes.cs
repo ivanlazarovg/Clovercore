@@ -29,7 +29,7 @@ public class TextAttributes : MonoBehaviour
 
     public IEnumerator FadeIn(Renderer textRenderer)
     {
-        textRenderer.material.SetColor("_SpecColor", flashGradient.Evaluate(0));
+        textRenderer.material.SetColor("_FaceColor", flashGradient.Evaluate(0));
         textRenderer.material.SetFloat("_FaceDilate", -1);
 
         float t = 0;
@@ -50,7 +50,7 @@ public class TextAttributes : MonoBehaviour
             t += Time.deltaTime * appearSpeed * fadeOutMultiploer;
 
             textRenderer.material.SetFloat("_FaceDilate", dilateFadeOutCurve.Evaluate(t));
-            textRenderer.material.SetColor("_SpecColor", flashGradient.Evaluate(t));
+            textRenderer.material.SetColor("_FaceColor", flashGradient.Evaluate(t));
 
             yield return null;
         }

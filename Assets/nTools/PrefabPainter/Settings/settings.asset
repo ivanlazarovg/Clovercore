@@ -678,9 +678,9 @@ MonoBehaviour:
     - name: flower_sunflower
       settings:
         brushRadius: 2.9
-        brushSpacing: 0.25
+        brushSpacing: 0.3
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 1
+        brushOverlapDistance: 0.66
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -695,8 +695,8 @@ MonoBehaviour:
         randomizeOrientationZ: 0
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 2
-        scaleUniformMax: 2.39
+        scaleUniformMin: 2.07
+        scaleUniformMax: 3
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         pinFixedRotation: 0
@@ -805,14 +805,14 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     - name: Pine Tree
       settings:
-        brushRadius: 9.66
-        brushSpacing: 0.49
+        brushRadius: 4.15
+        brushSpacing: 0.29
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 6
+        brushOverlapDistance: 2.49
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -937,7 +937,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     levelsGamma: 1
     levelsInBlack: 0
@@ -2279,7 +2279,7 @@ MonoBehaviour:
     levelsOutBlack: 0
     levelsOutWhite: 255
   activeTab: 0
-  paintOnSelected: 0
+  paintOnSelected: 1
   paintLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -2295,7 +2295,7 @@ MonoBehaviour:
   pinSnapScale: 0
   placeAngleStep: 15
   placeScaleStep: 0.1
-  eraseBrushRadius: 1.69
+  eraseBrushRadius: 1.74
   eraseByLayer: 0
   eraseLayers:
     serializedVersion: 2
