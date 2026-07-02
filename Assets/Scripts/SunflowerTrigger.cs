@@ -10,10 +10,16 @@ public class SunflowerTrigger : MonoBehaviour
     public float startHeight;
 
     public Material[] materials;
+    public AudioClip[] audioRevealClips;
     private bool textRevealed;
     void OnEnable()
     {
         StartCoroutine(RevealSunflowers(0, startHeight, revealSpeed * 6));
+    }
+
+    public AudioClip GetRandomClip()
+    {
+        return audioRevealClips[Random.Range(0, audioRevealClips.Length-1)];
     }
 
     // Update is called once per frame

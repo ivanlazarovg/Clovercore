@@ -94239,6 +94239,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  audioRevealClips:
+  - {fileID: 8300000, guid: 623074ee1a259854db99d13a699f4b59, type: 3}
+  - {fileID: 8300000, guid: 623074ee1a259854db99d13a699f4b59, type: 3}
+  - {fileID: 8300000, guid: e39da4c0fb79d984085d05273343804c, type: 3}
+  - {fileID: 8300000, guid: e219914125832604cafd2dc0668af32f, type: 3}
+  - {fileID: 8300000, guid: 80f1c2b5966249649b55b6778cc761d0, type: 3}
+  - {fileID: 8300000, guid: e39da4c0fb79d984085d05273343804c, type: 3}
   flashGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.8668317, b: 0.7311321, a: 1}
@@ -304515,7 +304522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895154703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 252.38, y: 19.76, z: -26.4}
+  m_LocalPosition: {x: 252.1, y: 21.16, z: 24.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -349513,6 +349520,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f548038d8aedff545a60b842d168599a, type: 2}
   - {fileID: 2100000, guid: 31d638f2c0534b549a343e6c3ff1d27b, type: 2}
   - {fileID: 2100000, guid: 7b96b3ed0d5a500418040041d0d40733, type: 2}
+  audioRevealClips: []
 --- !u!1 &5526301888891961286
 GameObject:
   m_ObjectHideFlags: 0

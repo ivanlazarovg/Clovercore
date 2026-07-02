@@ -11,6 +11,7 @@ public class TextAttributes : MonoBehaviour
     public float fadeOutMultiploer = 2;
     public float fadeInDilate;
     public AnimationCurve dilateFadeOutCurve;
+    public AudioClip[] audioRevealClips;
     [GradientUsage(true)] public Gradient flashGradient;
 
     private static TextAttributes instance;
@@ -25,6 +26,11 @@ public class TextAttributes : MonoBehaviour
             }
             return instance;
         }
+    }
+
+    public AudioClip GetRandomClip()
+    {
+        return audioRevealClips[Random.Range(0, audioRevealClips.Length - 1)];
     }
 
     public IEnumerator FadeIn(Renderer textRenderer)
