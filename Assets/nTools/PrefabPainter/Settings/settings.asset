@@ -677,10 +677,10 @@ MonoBehaviour:
       colorTag: 0
     - name: flower_sunflower
       settings:
-        brushRadius: 2.9
-        brushSpacing: 0.3
+        brushRadius: 8.56
+        brushSpacing: 0.87
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 0.66
+        brushOverlapDistance: 1
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -805,7 +805,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
     - name: Pine Tree
       settings:
@@ -937,7 +937,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
     levelsGamma: 1
     levelsInBlack: 0
@@ -2279,7 +2279,7 @@ MonoBehaviour:
     levelsOutBlack: 0
     levelsOutWhite: 255
   activeTab: 0
-  paintOnSelected: 1
+  paintOnSelected: 0
   paintLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -2295,7 +2295,7 @@ MonoBehaviour:
   pinSnapScale: 0
   placeAngleStep: 15
   placeScaleStep: 0.1
-  eraseBrushRadius: 1.74
+  eraseBrushRadius: 0.01
   eraseByLayer: 0
   eraseLayers:
     serializedVersion: 2

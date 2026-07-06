@@ -11,10 +11,17 @@ public class SunflowerTrigger : MonoBehaviour
 
     public Material[] materials;
     public AudioClip[] audioRevealClips;
+    public AudioSource swellSFXSource;
+    public Credits credits;
     private bool textRevealed;
+
+    AudioSource source;
     void OnEnable()
     {
         StartCoroutine(RevealSunflowers(0, startHeight, revealSpeed * 6));
+
+        source = GetComponent<AudioSource>();
+        source.Play(41100);
     }
 
     public AudioClip GetRandomClip()
@@ -28,7 +35,10 @@ public class SunflowerTrigger : MonoBehaviour
         if (finalReveal.hasAppeared && !textRevealed)
         {
             StartCoroutine(RevealSunflowers(startHeight, finalHeight, revealSpeed));
+            swellSFXSource.Play();
             textRevealed = true;
+
+            StartCoroutine(credits.Trigger());
         }
     }
 

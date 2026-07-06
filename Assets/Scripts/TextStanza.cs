@@ -6,6 +6,7 @@ using TMPro;
 public class TextStanza : MonoBehaviour
 {
     [SerializeField, TextArea()] protected string[] poemTexts;
+    public AudioClip[] voiceOverClips;
 
     public int textIndex = 0;
 
@@ -13,6 +14,8 @@ public class TextStanza : MonoBehaviour
     {
         poemTextMesh.text = poemTexts[textIndex];
         poemTextMesh.ForceMeshUpdate();
+
+        AudioManager.Instance.TriggerVoiceOver(voiceOverClips[textIndex]);
         textIndex++;
 
         collider.size = new Vector3(poemTextMesh.textBounds.size.x * 1.2f, poemTextMesh.textBounds.size.y * 1.5f, poemTextMesh.textBounds.size.z);

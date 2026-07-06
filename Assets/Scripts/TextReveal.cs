@@ -39,7 +39,7 @@ public class TextReveal : MonoBehaviour
     {
         stanza.SetText(textMesh, textCollider);
 
-        textRevealSource.clip = TextAttributes.Instance.audioRevealClips[stanza.textIndex];
+        textRevealSource.clip = TextAttributes.Instance.GetRandomClip();
         textRevealSource.Play();
 
         textRenderer.enabled = true;
