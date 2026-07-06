@@ -11,12 +11,16 @@ public class Credits : MonoBehaviour
 
     public UnityEngine.UI.Image image;
 
+    public GameObject[] textStuff;
+
     bool cameraSwell = false;
     void Start()
     {
         movement = FindAnyObjectByType<Movement>();
         sunRotation = FindAnyObjectByType<SunRotation>();
         playerCamera = Camera.main.transform;
+
+        DisableAllTexts();
     }
 
     private void Update()
@@ -31,14 +35,42 @@ public class Credits : MonoBehaviour
     {
         movement.enabled = false;
 
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(5);
         cameraSwell = true;
         StartCoroutine(sunRotation.FinalizeSunSet());
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6);
         StartCoroutine(AppearEndScreen());
 
+        yield return new WaitForSeconds(7);
+        DisableAllTexts();
+        textStuff[0].SetActive(true);
 
+        yield return new WaitForSeconds(5);
+        DisableAllTexts();
+        textStuff[1].SetActive(true);
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        DisableAllTexts();
+        textStuff[2].SetActive(true);
+        yield return new WaitForSeconds(1);
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        DisableAllTexts();
+        textStuff[3].SetActive(true);
+        yield return new WaitForSeconds(1);
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        DisableAllTexts();
+
+    }
+
+    public void DisableAllTexts()
+    {
+        foreach (var text in textStuff)
+        {
+            text.SetActive(false);
+        }
     }
 
     IEnumerator AppearEndScreen()
